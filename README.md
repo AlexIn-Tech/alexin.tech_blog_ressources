@@ -1,6 +1,6 @@
 # alexin.tech_blog_ressources
 
-Welcome to the official repository for all code and resources shared on my website, AlexIn Tech. This repository is designed to make it easier for you to copy, paste, and download the tools and snippets that I talk about in my blog posts. Whether you're a sysadmin, a system engineer, or just passionate about technology and personal development, you'll find a wealth of resources here to help you on your journey.
+Welcome to the official repository for all code and resources shared on my website, AlexIn Tech. This repository is designed to make it easier for you to copy, paste, and download the tools and snippets that I talk about in my blog posts. 
 
 ## 🚀 Getting Started
 
