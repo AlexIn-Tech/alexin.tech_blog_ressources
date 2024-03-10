@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  app:
+    image: monica
+    env_file: .env
+    depends_on:
+      - db
+    ports:
+      - 8181:80
+    volumes:
+    # CHANGE YOUR PATH HERE
+      - /mnt/user/appdata/monica-webapp:/var/www/html/storage
+    restart: always
+
+  cron:
+    image: monica
+    env_file: .env
+    restart: always
+    volumes:
+    # CHANGE YOUR PATH HERE
+      - /mnt/user/appdata/monica-webapp:/var/www/html/storage
+    command: cron.sh
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11
+    environment:
+    # CHANGE credentials here
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=monica
+      - MYSQL_USER=XXXXXXXXXXXXXXXXX
+      - MYSQL_PASSWORD=XXXXXXXXXXXXXXXXXXX
+    volumes:
+    # CHANGE YOUR PATH HERE
+      - /mnt/user/appdata/monica-db:/var/lib/mysql
+    restart: always
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8282:8080
